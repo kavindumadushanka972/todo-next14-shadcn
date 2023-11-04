@@ -14,41 +14,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 
 const NavBar = () => {
-  const { setTheme, theme, systemTheme } = useTheme();
-
-  const getThemeIcon = () => {
-    if (theme === 'system') {
-      if (systemTheme === 'dark') {
-        return (
-          <Moon
-            className="h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 cursor-pointer"
-            onClick={() => setTheme('light')}
-          />
-        );
-      } else {
-        return (
-          <Sun
-            className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 cursor-pointer"
-            onClick={() => setTheme('dark')}
-          />
-        );
-      }
-    } else if (theme === 'dark') {
-      return (
-        <Moon
-          className="h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 cursor-pointer"
-          onClick={() => setTheme('light')}
-        />
-      );
-    } else {
-      return (
-        <Sun
-          className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 cursor-pointer"
-          onClick={() => setTheme('dark')}
-        />
-      );
-    }
-  };
+  const { setTheme } = useTheme();
 
   return (
     <div className="bg-white dark:bg-gray-900 shadow w-full p-2 flex md:flex-row-reverse justify-between items-center fixed top-0 right-0 z-10 md:pl-60 ml-0 h-[60px]">
